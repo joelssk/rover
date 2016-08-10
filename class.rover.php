@@ -61,8 +61,15 @@ class rover {
 	    case 'E': $this->direction = 'S'; break;
 	    case 'S': $this->direction = 'W'; break;
 	    case 'W': $this->direction = 'N'; break;
+			default: $this->outputError("Error in right handler");
 		}
 	}
 
+
+	private function outputError($message) {
+		echo $message;
+	}
+
 }
+
 ?>
