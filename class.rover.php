@@ -33,5 +33,36 @@ class rover {
 			case 'M': $this->move(); break;
 		}
 	}
+
+
+	private function move() {
+		switch ($this->direction) {
+			case 'N': $this->y++; break;
+			case 'E': $this->x++; break;
+			case 'S': $this->y--; break;
+			case 'W': $this->x--; break;
+		}
+	}
+
+
+	private function left() {
+		switch ($this->direction) {
+	    case 'N': $this->direction = 'W'; break;
+	    case 'W': $this->direction = 'S'; break;
+	    case 'S': $this->direction = 'E'; break;
+	    case 'E': $this->direction = 'N'; break;
+		}
+	}
+
+
+	private function right() {
+		switch ($this->direction) {
+	    case 'N': $this->direction = 'E'; break;
+	    case 'E': $this->direction = 'S'; break;
+	    case 'S': $this->direction = 'W'; break;
+	    case 'W': $this->direction = 'N'; break;
+		}
+	}
+
 }
 ?>
